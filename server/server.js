@@ -13,13 +13,23 @@ const dbName = "motoreasy";
 const collectionName = "Brands";
 
 // db init
-db.initialize(dbName, collectionName, function(dbCollection) {
-    dbCollection.find().toArray(function(err, result) {
-        if(err) throw err;
+db.initialize(dbName, collectionName, function (dbCollection) {
+    dbCollection.find().toArray(function (err, result) {
+        if (err) throw err;
         console.log(result);
     });
-}, function(err) {
-    throw(err);
+
+    // << db CRUD routes >>
+    server.get("/items", (request, response) => {
+        // return updated list
+        dbCollection.find().toArray((error, result) => {
+            if (error) throw error;
+            response.json(result);
+        });
+    });
+
+}, function (err) {
+    throw (err);
 });
 
 server.listen(port, () => {
