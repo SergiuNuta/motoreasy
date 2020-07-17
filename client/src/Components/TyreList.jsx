@@ -5,17 +5,17 @@ import Tyre from "./Tyre";
 
 export default class TyreList extends Component {
     render() {
-        console.log(this.props.tyreData)
+        // console.log(this.props.tyreData.map(tyre => tyre.tyres))
         return(
             <>
-                {/* {this.props.tyreData ?(
+                {this.props.tyreData ?(
                 <section>
                     {this.props.tyreData.map((tyre, index) => (
                              <Tyre tyreData={tyre} key={index} />                         
                          ))}      
                  </section>):(
                      <h1>Loading data...</h1>
-                 )}  */}
+                 )} 
             </>
         );
     }

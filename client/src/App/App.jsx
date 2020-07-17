@@ -15,7 +15,7 @@ export default class App extends Component {
   }
 
   setSearchText = (event) => {
-    const searchText = event.target.value.toLowerCase();
+    const searchText = event.target.value;
     console.log(searchText)
     this.setState({ searchText }, this.filteredTyre);
   }
@@ -33,7 +33,6 @@ export default class App extends Component {
     });
   }
   render() {
-    console.log(this.state.tyres)
     return (
       <div className="App">
         <Router>
