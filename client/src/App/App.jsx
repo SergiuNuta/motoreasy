@@ -16,12 +16,11 @@ export default class App extends Component {
 
   setSearchText = (event) => {
     const searchText = event.target.value;
-    console.log(searchText)
     this.setState({ searchText }, this.filteredTyre);
   }
 
   filteredTyre = () => {
-    const filteredTyre = this.state.tyres.filter(tyre => tyre.name.includes(this.state.searchText));
+    const filteredTyre = this.state.tyres.filter(tyre => tyre.name.includes(this.state.searchText) || Object.values(tyre.tyres.size).includes(this.state.searchText));
     this.setState({ filteredTyre });
   }
 

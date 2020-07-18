@@ -5,17 +5,9 @@ export default class Tyres extends Component {
 
     render() {
         const tyreData = this.props.tyreData;
-        console.log(tyreData.tyres.size)
+        // console.log(tyreData.tyres.size)
         return (
             <>
-                {/* <Table striped bordered hover pagination="true" variant="dark" responsive size="sm" className={styles.table}> */}
-                    {/* <thead>
-                        <tr>
-                            <th className={styles.columnSizeId}>ID</th>
-                            <th className={styles.columnSizeName}>Brand</th>
-                            <th>Size</th>
-                        </tr>
-                    </thead> */}
                     <tbody>
                         <tr>
                             <td>{tyreData._id}</td>
@@ -28,7 +20,6 @@ export default class Tyres extends Component {
                             })}
                         </tr>
                     </tbody>
-                {/* </Table> */}
             </>
         )
     }
