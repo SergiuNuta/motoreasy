@@ -5,7 +5,6 @@ export default class Tyres extends Component {
 
     render() {
         const tyreData = this.props.tyreData;
-        // console.log(tyreData.tyres.size)
         return (
             <>
                     <tbody>
@@ -14,7 +13,7 @@ export default class Tyres extends Component {
                             <td>{tyreData.name}</td>
                             {Object.values(tyreData.tyres.size).map((value, index) => {
                                 return (
-                                    <td className={styles.sizeColumn} key={index}>{value}</td>
+                                    <td className={styles.sizeColumn} key={index}>R{value}</td>
                                 )
 
                             })}
