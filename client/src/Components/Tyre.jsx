@@ -1,8 +1,5 @@
-import React, { Component, useMemo } from 'react';
-import { useTable } from 'react-table';
-// import 'react-table/react-table.css'
-import Table from 'react-bootstrap/Table';
-
+import React, { Component } from 'react';
+import styles from "./Tyre.module.scss"
 
 export default class Tyres extends Component {
 
@@ -11,28 +8,27 @@ export default class Tyres extends Component {
         console.log(tyreData.tyres.size)
         return (
             <>
-                <Table striped bordered hover pagination variant="dark" responsive>
-                    <thead>
+                {/* <Table striped bordered hover pagination="true" variant="dark" responsive size="sm" className={styles.table}> */}
+                    {/* <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Brand</th>
+                            <th className={styles.columnSizeId}>ID</th>
+                            <th className={styles.columnSizeName}>Brand</th>
                             <th>Size</th>
                         </tr>
-                    </thead>
+                    </thead> */}
                     <tbody>
                         <tr>
                             <td>{tyreData._id}</td>
                             <td>{tyreData.name}</td>
-                            <td>{Object.values(tyreData.tyres.size).map(value => {
+                            {Object.values(tyreData.tyres.size).map((value, index) => {
                                 return (
-                                    <tr>
-                                        <td>{value}</td>
-                                    </tr>)
+                                    <td className={styles.sizeColumn} key={index}>{value}</td>
+                                )
 
-                            })}</td>
+                            })}
                         </tr>
                     </tbody>
-                </Table>
+                {/* </Table> */}
             </>
         )
     }
