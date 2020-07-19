@@ -22,9 +22,9 @@ db.initialize(dbName, collectionName, function (dbCollection) {
         console.log(result);
     });
 
-    // << db CRUD routes >>
+    // get all the items from database
     server.get("/items", (request, response) => {
-        // return updated list
+      
         dbCollection.find().toArray((error, result) => {
             if (error) throw error;
             response.json(result);
@@ -38,28 +38,3 @@ db.initialize(dbName, collectionName, function (dbCollection) {
 server.listen(port, () => {
     console.log(`Server listening at ${port}`);
 })
-
-
-// const express = require('express')
-// const connectDB = require('./DB/Connection');
-// const bodyParser = require('body-parser')
-// const cors = require('cors')
-// const app = express()
-// const apiPort = 3000;
-
-// connectDB()
-
-// const tyresRouter = require('./Api/TyresRouter');
-
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(cors())
-// app.use(bodyParser.json())
-// app.use(express.json({ extended: false }));
-// // app.use('/api/userModel', require('./Api/TyresControler'));
-// app.use('/api', tyresRouter);
-
-// app.get('/', (req, res) => {
-//     res.send('Hello Mother World!')
-// })
-
-// app.listen(apiPort, () => console.log(`Server is running on port ${apiPort}`))
