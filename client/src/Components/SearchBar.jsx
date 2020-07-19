@@ -3,30 +3,19 @@ import styles from "./SearchBar.module.scss";
 
 
 export default class SearchBar extends Component {
-    // state = {
-    //     filteredTyre: this.props.filteredTyre,
-    //     searchText: ""
-    // }
-    // setSearchText = (event) => {
-    //     const searchText = event.target.value.toLowerCase();
-    //     this.setState({ searchText }, this.props.filteredTyre);
-    // }
 
     render() {
-        console.log(this.searchText)
+        const { searchText, setSearchText } = this.props;
         return (
             <>
                 <section className={styles.searchDiv}>
                     <input
                         className={styles.searchBar}
-                        placeholder="Enter name or size ..."
-                        value={this.props.searchText}
-                        onChange={this.props.setSearchText}
+                        placeholder="Enter brand or size ..."
+                        value={searchText}
+                        onChange={setSearchText}
                     />
                 </section>
-                {/* <section className={styles.maxResultsInput}>
-                <input type="number" id="maxResults" className={styles.maxInput} placeholder="max results" />
-            </section> */}
             </>
         )
     }

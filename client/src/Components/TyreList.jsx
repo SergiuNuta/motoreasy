@@ -5,9 +5,10 @@ import styles from "./Tyre.module.scss"
 
 export default class TyreList extends Component {
     render() {
+        const { currentPosts } = this.props;
         return (
             <>
-                {this.props.currentPosts ? (
+                {currentPosts ? (
                     <Table striped bordered hover pagination="true" variant="dark" responsive size="sm" className={styles.table} pagesize="3">
                         <thead>
                             <tr>
@@ -16,7 +17,7 @@ export default class TyreList extends Component {
                                 <th>Size</th>
                             </tr>
                         </thead>
-                        {this.props.currentPosts.map((tyre, index) => (
+                        {currentPosts.map((tyre, index) => (
                             <Tyre tyreData={tyre} key={index} />
                         ))}
                     </Table>) : (

@@ -4,7 +4,7 @@ import styles from "./Tyre.module.scss"
 export default class Tyres extends Component {
 
     render() {
-        const tyreData = this.props.tyreData;
+        const { tyreData } = this.props;
         return (
             <>
                     <tbody>
@@ -15,7 +15,6 @@ export default class Tyres extends Component {
                                 return (
                                     <td className={styles.sizeColumn} key={index}>R{value}</td>
                                 )
-
                             })}
                         </tr>
                     </tbody>
