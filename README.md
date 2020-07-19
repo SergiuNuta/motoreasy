@@ -9,7 +9,7 @@
 
 The server will start to run
 
-<img src="./src/images/serverScreenShot.PNG" />
+<img src="./client/src/images/serverScreenShot.PNG" />
 
 ## from the client directory open visual studio code
 
@@ -17,4 +17,4 @@ The server will start to run
 
 ## yarn start
 
-<img src="./src/images/webScreenShot.PNG" />
+<img src="./client/src/images/webScreenShot.PNG" />
